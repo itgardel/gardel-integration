@@ -98,8 +98,8 @@ const STEPS = [
       <p>Les sucres bruts destinés à être <strong>raffinés en Europe</strong> sont stockés en vrac dans notre <strong>silo à Jarry</strong>, à proximité du port pour faciliter l'expédition.</p>
       <p>Les <strong>sucres de consommation directe</strong> (sucres spéciaux), principale fabrication de GARDEL, sont conditionnés en big-bags hermétiques d'une tonne, surtout à destination de nos clients industries agroalimentaires.</p>
       <ul>
-        <li>Expédition dans les <strong>Antilles et en Europe</strong> en big-bags ou sacs de 25 kg</li>
-        <li>Sachets <strong>500 g à 2 kg</strong> et Buchettes de <strong>5 g</strong> pour la grande distribution</li>
+        <li>Gros conditionnement : Expédition dans les <strong>Antilles et en Europe</strong> en big-bags ou sacs de 25 kg</li>
+        <li>Petit conditionnement : Sachets <strong>500 g à 2 kg</strong> et Buchettes de <strong>5 g</strong> pour la grande distribution</li>
       </ul>
     `
   }
@@ -160,9 +160,10 @@ function renderStepCards() {
     </svg>`,
     // 4 – Évaporation
     `<svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.4">
-      <rect x="8" y="26" width="30" height="16" rx="1"/>
-      <path d="M14 26 L14 18 C14 12 18 8 23 8 C28 8 32 12 32 18 L32 26"/>
-      <path d="M12 16 Q16 10 20 16 Q24 22 28 16 Q32 10 36 16" opacity="0.45"/>
+      <path d="M14 36 Q14 28 18 24 Q22 20 22 12"/>
+      <path d="M23 36 Q23 28 27 24 Q31 20 31 12"/>
+      <path d="M32 36 Q32 28 36 24 Q40 20 40 12"/>
+      <rect x="6" y="36" width="34" height="6" rx="1"/>
     </svg>`,
     // 5 – Cristallisation
     `<svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.4">
@@ -181,21 +182,20 @@ function renderStepCards() {
     </svg>`,
     // 7 – Séchage
     `<svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.4">
-      <rect x="6" y="20" width="34" height="16" rx="8"/>
-      <path d="M12 12 Q14 8 16 12 Q18 16 20 12 Q22 8 24 12 Q26 16 28 12 Q30 8 32 12"/>
-      <line x1="12" y1="28" x2="12" y2="28"/>
-      <line x1="20" y1="28" x2="20" y2="28"/>
-      <line x1="28" y1="28" x2="28" y2="28"/>
+      <circle cx="23" cy="23" r="4"/>
+      <path d="M23 19 C23 19 20 10 14 10 C10 10 10 16 14 18 C18 20 23 19 23 19"/>
+      <path d="M27 23 C27 23 36 20 36 14 C36 10 30 10 28 14 C26 18 27 23 27 23"/>
+      <path d="M23 27 C23 27 26 36 32 36 C36 36 36 30 32 28 C28 26 23 27 23 27"/>
+      <path d="M19 23 C19 23 10 26 10 32 C10 36 16 36 18 32 C20 28 19 23 19 23"/>
     </svg>`,
     // 8 – Conditionnement
     `<svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.4">
-      <rect x="8" y="14" width="30" height="26" rx="1"/>
-      <path d="M8 20 h30"/>
-      <path d="M18 14 L18 8 L28 8 L28 14"/>
-      <path d="M16 30 h14 M16 36 h10"/>
-      <circle cx="38" cy="36" r="5"/>
-      <path d="M35 36 L38 39 L43 33"/>
-    </svg>`
+      <rect x="10" y="18" width="26" height="22" rx="1"/>
+      <path d="M10 24 h26"/>
+      <path d="M18 18 L18 12 L28 12 L28 18"/>
+      <rect x="17" y="28" width="12" height="8" rx="1"/>
+      <path d="M20 32 h6"/>
+    </svg>`,
   ];
 
   grid.innerHTML = STEPS.map((s, i) => `
@@ -319,7 +319,7 @@ function initNavHighlight() {
    Progression 
    ══════════════════════════ */
 function initProgress() {
-  const SECTIONS = ['hero', 'histoire', 'sites', 'productions', 'fabrication', 'engagements', 'securite', 'rh', 'poles'];
+  const SECTIONS = ['hero', 'histoire', 'sites', 'productions', 'fabrication', 'engagements', 'engagement', 'securite', 'rh', 'poles'];
   const TOTAL = SECTIONS.length;
   const pctEl = document.querySelector('.progress-pill .pct');
   const pill  = document.querySelector('.progress-pill');
